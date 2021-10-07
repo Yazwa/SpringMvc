@@ -1,5 +1,6 @@
 package main.java.com.controller;
 
+import com.model.UserRepository;
 import main.java.com.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,9 @@ public class ContactController {
     // the instance variables in User class should have same names as the names in form so that binding happens correctly
     @RequestMapping(value = "/processForm", method = RequestMethod.POST)
     public String processForm(@ModelAttribute User user, Model model) {
+        System.out.println("Coming processForm");
+        UserRepository userRepository = new UserRepository();
+        userRepository.add(user);
         return "success";
     }
 

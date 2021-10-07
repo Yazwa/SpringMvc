@@ -24,6 +24,15 @@
 <h2 class="text-center">${Header}</h2>
     <form action="processForm" method="post">
         <div class="form-group">
+            <label for="userId">User Id</label>
+            <input type="number"
+                   class="form-control"
+                   id="userId"
+                   aria-describedby="emailHelp"
+                   placeholder="Enter user Id"
+                   name="userId">
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email"
                    class="form-control"

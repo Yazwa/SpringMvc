@@ -13,6 +13,7 @@
 </head>
 <body>
     <h2 class="text-center">${Header}</h2>
+    <h1> Your id is ${user.userId}</h1>
     <h1> Your name is ${user.userName}</h1>
     <h1> Your email is ${user.email}</h1>
     <h1> Your Password is ${user.userPassword}</h1>
