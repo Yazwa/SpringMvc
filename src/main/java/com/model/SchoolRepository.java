@@ -4,9 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import main.java.com.model.User;
 
-public class UserRepository {
+public class SchoolRepository {
 
     private EntityManager em;
 
@@ -14,21 +13,21 @@ public class UserRepository {
 
     private EntityManagerFactory emf;
 
-    public UserRepository() {
+    public SchoolRepository() {
         this.emf = Persistence.createEntityManagerFactory("pu");
         this.em = this.emf.createEntityManager();
         this.et = this.em.getTransaction();
     }
 
-    public void add(User empToAdd) {
+    public void add(School schoolToAdd) {
         et.begin();
-        em.persist(empToAdd);
+        em.persist(schoolToAdd);
         et.commit();
         System.out.println("Coming here");
     }
 
-    public User find(int id) {
-        return em.find(User.class , id);
+    public School find(int id) {
+        return em.find(School.class , id);
     }
 
     /*public User update(User updatedEmp) {
@@ -50,12 +49,5 @@ public class UserRepository {
     public void close() {
         em.close();
         emf.close();
-    }
-
-    public void addSchool(int userId, School school) {
-        et.begin();
-        User user = find(userId);
-        user.setSchool(school);
-        et.commit();
     }
 }

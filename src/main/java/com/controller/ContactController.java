@@ -1,5 +1,6 @@
 package main.java.com.controller;
 
+import com.model.School;
 import com.model.UserRepository;
 import main.java.com.model.User;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,8 @@ public class ContactController {
         System.out.println("Coming processForm");
         UserRepository userRepository = new UserRepository();
         userRepository.add(user);
+        School school = new School(123, "StJosephs");
+        userRepository.addSchool(user.getUserId(), school);
         return "success";
     }
 

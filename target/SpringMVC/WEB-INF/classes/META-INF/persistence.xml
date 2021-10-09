@@ -12,6 +12,11 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sathwik"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="Kohli@18"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- ***If below line is there then only it will add column automatically for one-one or etc mappings ***-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 
